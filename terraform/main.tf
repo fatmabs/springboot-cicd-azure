@@ -14,7 +14,9 @@ resource "azurerm_container_registry" "this" {
   admin_enabled            = false
   tags                     = {
     Environment = var.environment
+    
     ManagedBy   = "Terraform"
+
   }
 }
 
