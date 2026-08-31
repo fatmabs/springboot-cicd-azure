@@ -52,6 +52,9 @@ resource "azurerm_linux_web_app" "app" {
       docker_registry_url = "https://${azurerm_container_registry.this.login_server}"
     }
   }
+    app_settings = {
+    WEBSITES_PORT = "8080"
+  }
 }
 
 resource "azurerm_role_assignment" "webapp_acr_pull" {
