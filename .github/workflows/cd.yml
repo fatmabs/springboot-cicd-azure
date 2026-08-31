@@ -17,11 +17,6 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: Debug GitHub context
-        run: |
-          echo "GITHUB_REPOSITORY=$GITHUB_REPOSITORY"
-          echo "GITHUB_REF=$GITHUB_REF"
-          echo "GITHUB_REPOSITORY_OWNER=$GITHUB_REPOSITORY_OWNER"
 
       - name: Azure Login
         uses: azure/login@v2
@@ -29,3 +24,12 @@ jobs:
           client-id: ${{ vars.AZURE_CLIENT_ID }}
           tenant-id: ${{ vars.AZURE_TENANT_ID }}
           subscription-id: ${{ vars.AZURE_SUBSCRIPTION_ID }}
+
+      - name: Login to Azure Container Registry
+        run: az acr login --name myprojectacr123
+
+      - name: Build Docker image
+        run: docker build -t myprojectacr123.azurecr.io/hello-api:latest ./app
+        
+      - name: Push Docker image to ACR
+        run: docker push myprojectacr123.azurecr.io/hello-api:latest
