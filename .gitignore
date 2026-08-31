@@ -2,7 +2,9 @@
 .terraform/
 *.tfstate
 *.tfstate.*
-
+*.tfvars
+*federated-credential.json
+*documentation 
 # Maven
 target/
 .mvn/wrapper/maven-wrapper.jar
