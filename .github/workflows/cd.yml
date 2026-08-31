@@ -17,6 +17,17 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
+      - name: Set up Java
+        uses: actions/setup-java@v4
+        with:
+          java-version: '17'
+          distribution: 'temurin'
+          cache: maven
+
+      - name: Build application
+        working-directory: ./app
+        run: ./mvnw clean package -DskipTests
+
 
       - name: Azure Login
         uses: azure/login@v2
