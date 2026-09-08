@@ -54,7 +54,7 @@ Azure Resource Group
 | Category               | Technology                       |  Purpose                             |
 |--------------------------|-------------------------------|-------------------------------|
 | Backend                |Java 17, Spring Boot, Maven|REST API application build & tests|
-| Containerization            | Docker, Azure Container Registry                    |Docker, Azure Container Registry
+| Containerization            | Docker, Azure Container Registry                    |Image packaging and registry storage
 | Infrastructure as Code                    | Terraform   |Modular Azure infrastructure provisioning
 | Cloud Provider                   | Microsoft Azure  |Hosting (App Service, ACR, Entra ID, RBAC)
 | CI/CD & Security                | GitHub Actions, OpenID Connect (OIDC)        |Automated pipelines & passwordless auth
