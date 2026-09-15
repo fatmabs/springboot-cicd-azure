@@ -3,7 +3,7 @@ name: Spring Boot CI
 on:
   push:
     branches:
-      - main
+      - feature/hello-api
   pull_request:
     branches:
       - main
